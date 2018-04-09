@@ -1,5 +1,6 @@
 import {Tracker} from 'meteor/tracker'
 import SimpleSchema from 'simpl-schema';
+SimpleSchema.extendOptions(['autoform']);
 
 export const usersAddFormSchema = new SimpleSchema({
     name: {
@@ -15,16 +16,40 @@ export const usersAddFormSchema = new SimpleSchema({
     password: {
     type: String,
     label: "Enter a password",
+    autoform:{
+      type: 'password'
+    },
     min: 4
   },
   confirmPassword: {
     type: String,
     label: "Enter the password again",
+    autoform:{
+      type: 'password'
+    },
     min: 4,
     custom: function () {
       if (this.value !== this.field('password').value) {
         return "passwordMismatch";
       }
     }
+  },
+
+  roles:{
+    optional: true,
+    type: Array,
+    label: "Roles",
+    autoform:{
+      type: 'select-checkbox',
+      options:[
+        {label: 'Dispatcher', value: 'dispatcher'},
+        {label: 'Admin', value: 'admin'}
+      ]
+    }
+  },
+  'roles.$': {
+    type: String,
+    allowedValues: ['admin', 'disp']
   }
+
 }, { tracker: Tracker });
