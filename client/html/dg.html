@@ -1,0 +1,19 @@
+<template name="dg">
+
+	<!-- Dienasgrāmatas -->
+  	<div class="dg">
+  		<div class="row">
+  			<div class=".col-sm-6 .col-md-5 .col-lg-6" id="info">
+  			 	<p class="meta">Autors: {{author}}</p>
+					<p class="meta">Publicēts: {{date}}</p>
+
+
+          {{#each dg}}
+            {{> dg}}
+          {{/each}}
+      	</div>
+			</div>
+  	</div>
+
+
+</template>

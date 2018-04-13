@@ -1,0 +1,87 @@
+<template name="dgForm">
+<!-- {#if currentUser}} -->
+
+	<div id="dgForm-wrap">
+		<center>
+
+
+			 <input type ="date" id="todays-date" value="" class="form-control">
+
+					<script>
+					var today = new Date();
+					var dd = ("0" + (today.getDate())).slice(-2);
+					var mm = ("0" + (today.getMonth() +　1)).slice(-2);
+					var yyyy = today.getFullYear();
+					today = yyyy + '-' + mm + '-' + dd ;
+					$("#todays-date").attr("value", today);
+					</script>
+
+
+			<form class="dg-post">
+
+				<label for="dgPost" class="sr-only"></label>
+				<input type="text" name="dgPost" id="dgPost" class="form-control" placeholder="Dienas atskaite">
+
+				<button class="btn btn-lg btn-success btn-block" type="submit" >Post</button>
+			</form>
+<br>
+  	<a href="/dg" margin="left" class="button">View all</a>
+
+		{{#each dg}}
+			{{> dg}}
+		{{/each}}
+		</center>
+
+
+	</div>
+
+<style>
+input[type=date], select {
+    width: 100%;
+    padding: 5px 10px;
+    margin: 40px 0;
+		width: 200px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type=text], select {
+	width: 100%;
+	height: 150px;
+	padding: 12px 20px;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	font-size: 16px;
+	resize: both;}
+	/* input[type=text]:focus {
+		tex
+	    height: 300px;
+	} */
+
+</style>
+
+
+</template>
+
+<!-- <template name="dgList">
+    <li class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
+        <button class="delete">&times;</button>
+
+        <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+
+        {{#if isOwner}}
+            <button class="toggle-private">
+                {{#if private}}
+                Private
+                {{else}}
+                Public
+                {{/if}}
+            </button>
+        {{/if}}
+
+        <span class="text"><strong>{{username}}</strong> - {{text}}</span>
+    </li>
+</template> -->
