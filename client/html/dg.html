@@ -1,19 +1,19 @@
 <template name="dg">
 
+
+{{#each getDg}}
 	<!-- Dienasgrāmatas -->
   	<div class="dg">
   		<div class="row">
-  			<div class=".col-sm-6 .col-md-5 .col-lg-6" id="info">
+  			<div class=".col-sm-6 .col-md-5 .col-lg-6">
   			 	<p class="meta">Autors: {{author}}</p>
 					<p class="meta">Publicēts: {{date}}</p>
 
+          <p class="dgPost">{{dgPost}}</p>
 
-          {{#each dg}}
-            {{> dg}}
-          {{/each}}
       	</div>
 			</div>
   	</div>
 
-
+{{/each}}
 </template>

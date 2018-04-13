@@ -1,3 +1,9 @@
 import { Mongo } from 'meteor/mongo';
 
-Dg = new Mongo.Collection('Dg');
+export const Dg = new Mongo.Collection('Dg');
+
+if (Meteor.isServer) {
+    Meteor.publish('Dg', function dgPublication() {
+        return Dg.find({}, { sort: { createdAt: -1 } });
+    });
+}

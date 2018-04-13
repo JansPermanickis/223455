@@ -5,10 +5,15 @@ import { dg } from '../../imports/api/collections.js';
 import '../../lib/methods/methods.js';
 import { ReactiveDict } from 'meteor/reactive-dict';
  import '../html/dgForm.html';
+import '../../imports/api/publish';
+import '../../imports/api/subscribe';
 
+Template.dgForm.rendered = function() {
+
+}
 
  Template.dgForm.events({
-   'submit .dg-post'(event) {
+   'submit .dg-post': function() {
      // Prevent default browser form submit
      event.preventDefault();
 
