@@ -40,9 +40,10 @@ export const usersAddFormSchema = new SimpleSchema({
     type: Array,
     label: "Roles",
     autoform:{
-      type: 'select-checkbox',
+      type: 'boolean-checkbox',
       options:[
-        {label: 'Dispatcher', value: 'dispatcher'},
+        {label: 'Student', value: 'student'},
+        {label: 'Teacher', value: 'teacher'},
         {label: 'Admin', value: 'admin'}
       ]
     }

@@ -19,10 +19,16 @@ Template.dgForm.rendered = function() {
 
      // Get value from form element
      const target = event.target;
+     // const Date = target.Date.value;
      const dgPost = target.dgPost.value;
-
+     const date = target.date.value;
+     // const owner = target.owner.value;
+     // const author = Dg.findOne({_id:this._id}).userId;
      // Insert a task into the collection
-     Meteor.call('addDg', dgPost);
+
+
+
+  Meteor.call('addDg', dgPost, date);
 
      // Clear form
      target.dgPost.value = '';
@@ -30,7 +36,24 @@ Template.dgForm.rendered = function() {
  });
 
 
+ Template.dgList.helpers({
+   isOwner() {
+     return this.owner === Meteor.userId();
+   },
+ });
 
+ Template.dgList.events({
+   'click .toggle-checked'() {
+     // Set the checked property to the opposite of its current value
+     Meteor.call('dg.setChecked', this._id, !this.checked);
+   },
+   'click .delete'() {
+     Meteor.call('dg.remove', this._id);
+   },
+   'click .toggle-private'() {
+     Meteor.call('dg.setPrivate', this._id, !this.private);
+   },
+ });
 
 
 

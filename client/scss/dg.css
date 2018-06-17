@@ -1,0 +1,14 @@
+.dg {
+	border: 10px solid #ececec;
+	background-color: #5EA0A9;
+	text-decoration-color: white;
+	color: white;
+  text-align: center;
+	padding: 10px 10px;
+		font-size: 16px;
+	margin: 10px 0px 20px 0px;
+}
+
+p.dgPost{
+word-wrap: break-word;
+}

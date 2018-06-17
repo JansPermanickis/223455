@@ -1,4 +1,5 @@
 @import "../node_modules/materialize-css/sass/components/_color.scss";
+@import './pages/global';
 
 $primary-color: color("blue", "base") !default;
 $primary-color-light: color("blue", "lighten-4") !default;
@@ -7,5 +8,17 @@ $secondary-color: color("orange", "lighten-1") !default;
 $success-color: color("green", "base") !default;
 $error-color: color("red", "base") !default;
 $link-color: color("light-blue", "darken-1") !default;
+
+
+button{
+height:20px;
+width:100px;
+margin: -20px -50px;
+position:relative;
+top:50%;
+left:50%;
+}
+
+
 
 @import "../node_modules/materialize-css/sass/materialize.scss";

@@ -4,32 +4,49 @@
 	<div id="dgForm-wrap">
 		<center>
 
+					<!-- // <script>
+					// var today = new Date();
+					// var dd = ("0" + (today.getDate())).slice(-2);
+					// var mm = ("0" + (today.getMonth() +　1)).slice(-2);
+					// var yyyy = today.getFullYear();
+					// today = yyyy + '-' + mm + '-' + dd ;
+					// $("#todays-date").attr("value", today);
+					// </script> -->
+					<button onclick="myFunction()">Submit date</button>
+					<p id="demo"></p>
 
-			 <input type ="date" id="todays-date" value="" class="form-control">
+
 
 					<script>
-					var today = new Date();
-					var dd = ("0" + (today.getDate())).slice(-2);
-					var mm = ("0" + (today.getMonth() +　1)).slice(-2);
-					var yyyy = today.getFullYear();
-					today = yyyy + '-' + mm + '-' + dd ;
-					$("#todays-date").attr("value", today);
+					function myFunction() {
+    			var x = document.getElementById("todays-date").value;
+    			document.getElementById("demo").innerHTML = x;
+					}
 					</script>
 
 
 			<form class="dg-post">
+<!--
+				<label for="dgDate" class="sr-only"></label>
+				<input type="" name="dgDate" id="dgDate" class="form-control" placeholder="Datums"> -->
+				<label for="date" class="sr-only"></label>
+				<input type ="date" id="date" class="form-control">
 
 				<label for="dgPost" class="sr-only"></label>
 				<input type="text" name="dgPost" id="dgPost" class="form-control" placeholder="Dienas atskaite">
 
-				<button class="btn btn-lg btn-success btn-block" type="submit" >Post</button>
+				<button class ="btn btn-lg btn-success btn-block" type="submit"> Post</button>
+
 			</form>
 <br>
-  	<a href="/dg" margin="left" class="button">View all</a>
-
+  	<a href="/dg" margin="left" class="button">Redzēt savas atskaites</a>
+		<br>
+		<br>
 		{{#each dg}}
 			{{> dg}}
 		{{/each}}
+
+
 		</center>
 
 
@@ -37,6 +54,7 @@
 
 <style>
 input[type=date], select {
+		margin-top: 10px;
     width: 100%;
     padding: 5px 10px;
     margin: 40px 0;
@@ -66,7 +84,7 @@ input[type=text], select {
 
 </template>
 
-<!-- <template name="dgList">
+<template name="dgList">
     <li class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
         <button class="delete">&times;</button>
 
@@ -81,7 +99,6 @@ input[type=text], select {
                 {{/if}}
             </button>
         {{/if}}
-
         <span class="text"><strong>{{username}}</strong> - {{text}}</span>
     </li>
-</template> -->
+</template>

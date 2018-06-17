@@ -1,22 +1,44 @@
 <template name="login">
     <div class="middle-box text-center loginscreen animated fadeInDown">
         <div>
-            <div>
-
-                <h1 class="logo-name">E-Dienasgrāmata</h1>
+            <div align="center">
+                <h3 class="logo-name">E-Dienasgrāmata</h3>
 
             </div>
+            <style>
 
+
+        input[class="form-control"], select {
+          width: 50%;
+          height: 50px;
+          margin-left: 25%;
+          padding: 12px;
+          text-align: center;
+          box-sizing: border-box;
+          border: 2px solid #ccc;
+          border-radius: 4px;
+          font-size: 16px;
+        }
+
+        input[class="btn btn-primary block full-width m-b"], select {
+          height:20px;
+          width:100px;
+          margin: -20px -50px;
+          position:relative;
+          top:50%;
+          left:50%;
+        }
+
+
+        </style>
       <!--     <form class="m-t" role="form" action="/dashboard1"> -->
                 <div class="form-group">
-                    <input type="email" id ="loginField" class="form-control" placeholder="E-mail" required="">
+                    <input align="center" type="email" id ="loginField" class="form-control" placeholder="E-mail" required="">
                 </div>
                 <div class="form-group">
                     <input type="password" id ="passwordField" class="form-control" placeholder="Password" required="">
                 </div>
                 <button type="submit" id ="jsLogin" class="btn btn-primary block full-width m-b">Login</button>
-
-
             <!-- </form> -->
 
         </div>

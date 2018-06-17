@@ -1,0 +1,15 @@
+.header {
+  margin: 0;
+
+  h1 {
+    margin: 90px 0 15px;
+    text-align: center;
+  }
+
+  .title-underline {
+    width: 87px;
+    height: 4px;
+    background-color: $primary-color-1;
+    margin: 0 auto 55px;
+  }
+}
