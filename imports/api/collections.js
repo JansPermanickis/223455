@@ -27,7 +27,7 @@ if (Meteor.isServer) {
 			} else {
 
 				var profile = Meteor.user().profile.name;
-
+        // var role =
 				var year = new Date().getFullYear();
 				var month = new Date().getMonth() + 1;
 				var day = new Date().getDate();
@@ -48,4 +48,18 @@ if (Meteor.isServer) {
 			}
 		},
 	});
+// 
+//   {{if ifInRole 'admin' 'default-group'}}
+//
+// 		document.getElementById("sav").style.visibility = "hidden";
+//
+// {{else}}
+//
+// 		document.getElementById("vis").style.visibility = "hidden";
+//
+// {{/if}}
+
+
+
+
 }

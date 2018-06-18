@@ -4,16 +4,14 @@
 	<div id="dgForm-wrap">
 		<center>
 
-					<!-- // <script>
-					// var today = new Date();
-					// var dd = ("0" + (today.getDate())).slice(-2);
-					// var mm = ("0" + (today.getMonth() +　1)).slice(-2);
-					// var yyyy = today.getFullYear();
-					// today = yyyy + '-' + mm + '-' + dd ;
-					// $("#todays-date").attr("value", today);
-					// </script> -->
-					<button onclick="myFunction()">Submit date</button>
-					<p id="demo"></p>
+				 <script>
+					var today = new Date();
+					var dd = ("0" + (today.getDate())).slice(-2);
+					var mm = ("0" + (today.getMonth() +　1)).slice(-2);
+					var yyyy = today.getFullYear();
+					today = yyyy + '-' + mm + '-' + dd ;
+					$("#date").attr("value", today);
+					</script>
 
 
 
@@ -39,7 +37,18 @@
 
 			</form>
 <br>
-  	<a href="/dg" margin="left" class="button">Redzēt savas atskaites</a>
+
+
+{{#if isInRole 'admin' 'default-group'}}
+
+		<a id="vis" href="/tDg" margin="left" class="button">Redzēt visas atskaites</a>
+
+{{else}}
+
+  	<a id="sav" href="/dg" margin="left" class="button">Redzēt savas atskaites</a>
+{{/if}}
+
+		<br><br>
 		<br>
 		<br>
 		{{#each dg}}
@@ -51,6 +60,10 @@
 
 
 	</div>
+
+
+
+
 
 <style>
 input[type=date], select {
@@ -84,6 +97,9 @@ input[type=text], select {
 
 </template>
 
+
+
+
 <template name="dgList">
     <li class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
         <button class="delete">&times;</button>
@@ -102,3 +118,11 @@ input[type=text], select {
         <span class="text"><strong>{{username}}</strong> - {{text}}</span>
     </li>
 </template>
+
+
+<!-- //  <script>
+// //
+// // 	document.getElementById("vis").style.visibility = "hidden";
+// //
+// //
+// // </script> -->

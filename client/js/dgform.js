@@ -11,7 +11,6 @@ import '../../imports/api/subscribe';
 Template.dgForm.rendered = function() {
 
 }
-
  Template.dgForm.events({
    'submit .dg-post': function() {
      // Prevent default browser form submit
@@ -27,7 +26,6 @@ Template.dgForm.rendered = function() {
      // Insert a task into the collection
 
 
-
   Meteor.call('addDg', dgPost, date);
 
      // Clear form
@@ -37,6 +35,7 @@ Template.dgForm.rendered = function() {
 
 
  Template.dgList.helpers({
+
    isOwner() {
      return this.owner === Meteor.userId();
    },

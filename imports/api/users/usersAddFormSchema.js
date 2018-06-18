@@ -40,9 +40,8 @@ export const usersAddFormSchema = new SimpleSchema({
     type: Array,
     label: "Roles",
     autoform:{
-      type: 'boolean-checkbox',
+      type: 'select-checkbox',
       options:[
-        {label: 'Student', value: 'student'},
         {label: 'Teacher', value: 'teacher'},
         {label: 'Admin', value: 'admin'}
       ]
@@ -50,7 +49,7 @@ export const usersAddFormSchema = new SimpleSchema({
   },
   'roles.$': {
     type: String,
-    allowedValues: ['admin', 'disp']
+    allowedValues: ['admin', 'disp', 'teacher']
   }
 
 }, { tracker: Tracker });

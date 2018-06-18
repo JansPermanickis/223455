@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { usersAddFormSchema } from '/imports/api/users/usersAddFormSchema.js';
 import {Roles} from 'meteor/alanning:roles'
 import {Accounts} from 'meteor/accounts-base';
-
+// Roles.addUsersToRoles(dsDTzGbB8BzoHZ6ys, 'admin');
 
 Meteor.methods({
   'users.add'(data){
@@ -24,7 +24,7 @@ Meteor.methods({
       profile: { name: data.name }
     });
 
-  
+
   },
 
 });
